@@ -21,7 +21,35 @@
   });
 
   function showCarDetails() {
-      
+    var namefield = document.forms["PersonalDetailsForm"]["nameInput"].value
+    if (namefield == null || namefield == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+    var agefield = document.forms["PersonalDetailsForm"]["AgeInput"].value
+    if (agefield == null || agefield == "") {
+      alert("Age must be filled out");
+      return false;
+    }
+    var townfield = document.forms["PersonalDetailsForm"]["Town/CityInput"].value
+    if (townfield == null || townfield == "") {
+      alert("Town/City must be filled out");
+      return false;
+    }
+    var emailfield = document.forms["PersonalDetailsForm"]["emailAddressInput"].value
+    if (emailfield == null || emailfield == "") {
+      alert("Email Address must be filled out");
+      return false;
+    }
+    var emailfield = document.forms["PersonalDetailsForm"]["emailAddressInput"].value
+    if (emailfield == null || emailfield == "") {
+      alert("Email Address must be filled out");
+      return false;
+    }
+      $ ('#dvPersonalDetails') .hide() 
+      $ ('#dvCarDetails') .show() ;
+       $ ('#dvPQuoteDetais') .hide() ;
+ 
     // Hide the personal details section (dvPersonalDetails)
     // Hide the quote section (dvQuoteDetails)
     // Show the car details section (dvCarDetails)
@@ -29,22 +57,32 @@
   }
 
   function showPersonalDetails() {
+          $ ('#dvPersonalDetails') .show() ;
+         $ ('#dvCarDetails') .hide() ;
+       $ ('#dvPQuoteDetais') .hide() ;
+
       // Hide the car details section (dvCarDetails)
       // Hide the quote section (dvQuoteDetails)
       // Show the personal details section (dvPersonalDetails)
   }
 
   function showQuoteDetails() {
+          $ ('#dvPersonalDetails') .hide() ;
+        $ ('#dvCarDetails') .show() ;
+       $ ('#dvPQuoteDetais') .hide() ;
+
+
+
       // Hide the car details section (dvCarDetails)
       // Hide the personal details section (dvQuoteDetails)
       // Show the quote section (dvPersonalDetails)
   }
 
-  function getQuote() {
+  /*function getQuote() {
 
     // Perform validation to test that all data has been entered
 
-    if (/* Page is Valid */)
+    if (/* Page is Valid )
     {
 
       // Get the values from the page elements that you need to create your JSON
@@ -52,13 +90,13 @@
       $.ajax({
           type: "GET",
           url: "http://localhost:53753/api/rating/CalculateRates",
-          data: { /* create JSON here */ }
+          data: { /* create JSON here }
         }).done(function(msg) {
           // Put the return value into Label created on quote details
           // Hide the Car Details section
           // Display the quote details page
       });
-  }
+  }*/
 
 //################################# Helper Functions - look at these when validating and changing section #########################################
 
