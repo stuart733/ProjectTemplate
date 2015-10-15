@@ -54,7 +54,6 @@
 
         <div class="row">
           <form class="form-horizontal" name = "PersonalDetailsForm" >
-
             <div class="form-group">
               <label for="nameInput" class="control-label col-md-2">Name</label>
               <div class="col-md-4">
@@ -68,7 +67,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="ageInput" class="control-label col-md-2">Gender</label>
+              <label for="genderInput" class="control-label col-md-2">Gender</label>
               <div class="col-md-4">
               <input type="radio" name="sex" value="male">Male<br>
               <input type="radio" name="sex" value="female">Female
@@ -89,10 +88,10 @@
             </div>
             
             <div class="form-group">
-              <label for="NoClaims" class="control-label col-md-2">No claim bonus (in years)</label>
+              <label for="NoClaims" name="noclaimsbonusInput" class="control-label col-md-2">No claim bonus (in years)</label>
               <div class="col-md-4">
-                <select class="form-control personalDetails">
-                  <option value="Select">Select</option>
+                <select id="noClaims" class="form-control personalDetails">
+                  <option selected diabled >select</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -115,14 +114,14 @@
       <!-- WRAP CAR DETAILS FORM IN CHILD PANEL -->
       <div id="dvCarDetails" class="dvCarDetails" >        <!--class="dvCarDetails"-->
         <!-- Code for the car details section to be added here -->
-        <h1>More details</h1>
+        <h1>Car details</h1>
         <p>In order to provide you with a quote, we need a few details. Please complete the form below. Thanks.</p>
 
         <div class="row">
-          <form class="form-horizontal">
+          <form class="form-horizontal" name="CarDetailsForm"> 
             <div class="form-group">
               <label for="NoClaims" class="control-label col-md-2">Manufacteur</label>
-              <div class="col-md-4">
+              <div class="col-md-4"name="manufacteurInput">
                 <select class="form-control personalDetails">
                   <option value="Select">Select</option>
                   <option value="Audi">Audi</option>
@@ -173,7 +172,7 @@
             <div class="form-group">
               <div class="col-md-4">
                 <input id="btnBack" value="Back" class="btn btn-default btn-sm btn-success" onclick="showPersonalDetails()" />
-                <input id="btnQuotet" value="Get Quote" class="btn btn-default btn-sm btn-success" onclick="showCarDetails()" />            
+                <input id="btnQuote" value="Get Quote" class="btn btn-default btn-sm btn-success" onclick="showQuoteDetails()" />            
               </div>
 
             </div>
@@ -184,10 +183,27 @@
 
 
       <!-- WRAP Quote DETAILS FORM IN CHILD PANEL -->
-      <div id="dvQuoteDetails" class="dvQuoteDetails">
-        <!-- The display fields for the quote will be added here -->
-      </div>
+      <div id="dvQuoteDetails" class="dvQuoteDetails"><!--class="dvQuoteDetails"-->
+        <!-- The display fields for the quote will be added here --> 
+        <h1>Quote</h1> 
 
+        <div class="row">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label class="control-label col-md-2">Quote Price £</label>
+              <div class="col-md-4">
+                <label id="txtQuote" class="control-label col-md-2"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-4">
+                <input id="btnQuoteBack" value="Back" class="btn btn-default btn-sm btn-success" onclick="showCarDetails()" />           
+              </div>
+            </div>
+          </form>
+        </div>
+    </div>
 <!--#######################################################################################################################################################
      Do not change any of the code below this comment to begin with, it is precompleted so that you get more time doing the actual challenges and not
      working on the setup of the code

@@ -31,6 +31,7 @@
       alert("Age must be filled out");
       return false;
     }
+    
     var townfield = document.forms["PersonalDetailsForm"]["Town/CityInput"].value
     if (townfield == null || townfield == "") {
       alert("Town/City must be filled out");
@@ -41,14 +42,15 @@
       alert("Email Address must be filled out");
       return false;
     }
-    var emailfield = document.forms["PersonalDetailsForm"]["emailAddressInput"].value
-    if (emailfield == null || emailfield == "") {
-      alert("Email Address must be filled out");
+    var noclaimsbonusfield = document.getElementById("noClaims")
+    if (noclaimsbonusfield.selectedIndex== 0) {
+      alert("No claims bonus must be filled out");
       return false;
     }
-      $ ('#dvPersonalDetails') .hide() 
+      $ ('#dvPersonalDetails') .hide() ;
+       $ ('#dvQuoteDetails') .hide() ;
+
       $ ('#dvCarDetails') .show() ;
-       $ ('#dvPQuoteDetais') .hide() ;
  
     // Hide the personal details section (dvPersonalDetails)
     // Hide the quote section (dvQuoteDetails)
@@ -57,19 +59,27 @@
   }
 
   function showPersonalDetails() {
+        var manufacteurfield = document.forms["CarDetailsForm"]["manufacteurInput"].value
+    if (manufacteurfield == null || manufacteurfield == "") {
+      alert(" Manufacteur Field must be filled out");
+      return false;
+    }
           $ ('#dvPersonalDetails') .show() ;
          $ ('#dvCarDetails') .hide() ;
-       $ ('#dvPQuoteDetais') .hide() ;
+       $ ('#dvQuoteDetails') .hide() ;
+    
+    }
+
 
       // Hide the car details section (dvCarDetails)
       // Hide the quote section (dvQuoteDetails)
       // Show the personal details section (dvPersonalDetails)
-  }
+  
 
   function showQuoteDetails() {
           $ ('#dvPersonalDetails') .hide() ;
-        $ ('#dvCarDetails') .show() ;
-       $ ('#dvPQuoteDetais') .hide() ;
+        $ ('#dvCarDetails') .hide() ;
+       $ ('#dvQuoteDetails') .show() ;
 
 
 
@@ -78,8 +88,8 @@
       // Show the quote section (dvPersonalDetails)
   }
 
-  /*function getQuote() {
-
+  function getQuote() {
+/*
     // Perform validation to test that all data has been entered
 
     if (/* Page is Valid )
@@ -95,8 +105,8 @@
           // Put the return value into Label created on quote details
           // Hide the Car Details section
           // Display the quote details page
-      });
-  }*/
+      }); */
+  }
 
 //################################# Helper Functions - look at these when validating and changing section #########################################
 
